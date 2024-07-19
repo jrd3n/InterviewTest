@@ -31,9 +31,12 @@ sudo apt install vsftpd -y
 sudo cp ./InterviewTest-main/vsftppd.conf /etc/vsftpd.conf
 
 sudo mkdir -p /home/pi/ftp
+sudo mkdir -p /home/pi/ftp/upload
 
 sudo chown -R ftp:ftp /home/pi/ftp
-sudo chmod -R 755 /home/pi/ftp
+sudo chmod -R 555 /home/pi/ftp
+
+sudo chmod -R 777 /home/pi/ftp/upload
 
 sudo systemctl restart vsftpd
 
