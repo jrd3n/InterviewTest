@@ -18,8 +18,8 @@ Log in via SSH
 sudo apt update
 sudo apt upgrade -y
 
-
-
+wget https://github.com/jrd3n/InterviewTest/archive/refs/heads/main.zip
+unzip main.zip 
 
 ```
 
@@ -28,10 +28,17 @@ sudo apt upgrade -y
 ```bash
 
 sudo apt install vsftpd -y
+sudo cp ./InterviewTest-main/vsftppd.conf /etc/vsftpd.conf
 
+sudo mkdir -p /home/pi/ftp
 
+sudo chown -R ftp:ftp /home/pi/ftp
+sudo chmod -R 755 /home/pi/ftp
 
+sudo systemctl restart vsftpd
 
-
+sudo systemctl enable vsftpd
 
 ```
+
+
